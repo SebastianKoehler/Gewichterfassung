@@ -14,5 +14,8 @@ def create_app(config_class=Config):
 
     with app.app_context():
         from app.models import WeightEntry
+        from app.routes import app_routes
+
+        app.register_blueprint(app_routes)
 
     return app
